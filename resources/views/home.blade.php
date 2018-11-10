@@ -11,21 +11,30 @@
             <h2>
                 Ultimele Notificari
             </h2>
+            @php
+                $count = 100;    
+            @endphp
             @foreach ($notifications as $notification)
                 @if($notification->type == 1)
-                <div class="alert alert-danger" role="alert">
+                <div class="alert alert-danger" id="{{$count}}" role="alert">
+                    <button type="button" data-id="{{ $notification->id }}" data-url="{{ route('deleteNotification') }}"  data-alert={{$count}} class="btn btn-success btn-sm" style="float:right;">Facut</button>
                     <h4>{{ $notification->title }}</h4>
                     <p>{{ $notification->content }}</p>
+                    @php
+                        $count++;
+                    @endphp
                 </div>
                 @endif
                 @if($notification->type == 2)
                 <div class="alert alert-warning" role="alert">
+                    <button type="button" data-id="{{ $notification->id }}" data-url="{{ route('deleteNotification') }}"  data-alert={{$count}} class="btn btn-success btn-sm" style="float:right;">Facut</button>
                     <h4>{{ $notification->title }}</h4>
                     <p>{{ $notification->content }}</p>
                 </div>
                 @endif
                 @if($notification->type == 3)
                 <div class="alert alert-info" role="alert">
+                    <button type="button" data-id="{{ $notification->id }}" data-url="{{ route('deleteNotification') }}"  data-alert={{$count}} class="btn btn-success btn-sm" style="float:right;">Facut</button>
                     <h4>{{ $notification->title }}</h4>
                     <p>{{ $notification->content }}</p>
                 </div>
@@ -64,6 +73,29 @@
     </div>
 </div>
 
+
+<script>
+
+
+
+$( ".btn" ).click(function() {
+    $.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+    $.ajax({
+        method: "POST",
+        url: this.getAttribute("data-url"),
+        data: { data_id: this.getAttribute("data-id") }
+      })
+        .done(function( msg ) {
+            location.reload();
+        });
+});
+
+
+</script>
 
 <!--Content Ends-->
 @endsection

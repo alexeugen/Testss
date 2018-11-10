@@ -20,6 +20,16 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin', 'AdminController@index')->name('admin');
 
     Route::post('/admin/annualcheck', 'AdminController@annualCheck')->name('sendAnnualCheck');
+    Route::post('/admin/toparents', 'AdminController@toParents')->name('sendToParents');
+
+    Route::post('/delete-notification', 'HomeController@deleteNotification')->name('deleteNotification');
     
     Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+    Route::get('/articol', function () {
+        return view('articol');
+    });
+    Route::get('/doctor', function () {
+        return view('doctor');
+    });
 });

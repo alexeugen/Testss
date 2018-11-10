@@ -31,4 +31,18 @@ class HomeController extends Controller
         
         return view('home')->with(compact('notifications'));
     }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function deleteNotification(Request $request)
+    {
+        $user = Auth::user();
+      
+        $user->notifications()->detach($request->data_id);
+        
+        return;
+    }
 }

@@ -67,24 +67,7 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="jumbotron">
-                    <h1 class="display-4">Notificare</h1>
-                    <p class="lead">Trimite notificare control genera periodic 2018.</p>
-                    <hr class="my-4">
-                    <a class="btn btn-primary btn-lg" href="#" role="button">Trimite</a>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="jumbotron">
-                    <h1 class="display-4">Notificare</h1>
-                    <p class="lead">Trimite notificare control periodic</p>
-                    <hr class="my-4">
-                    <a class="btn btn-primary btn-lg" href="#" role="button">Trimite</a>
-                </div>
-            </div>
-        </div>
+ 
     
     </div>
 

@@ -52,4 +52,29 @@ class AdminController extends Controller
         return view('admin');
     }
 
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function toParents(User $userModel, Notification $notificationModel, Request $request)
+    {
+        $notification = new Notification;
+        $notification->title = $request->title;
+        $notification->content = $request->content;
+        $notification->longcontent = "not yet implemented";
+        $notification->type = $request->type;
+        $notification->save();
+
+        $users = $userModel->all();
+
+        foreach($users as $user)
+        {
+            if($user->childage >= $request->minage && $user->childage <= $request->maxage) {
+                $user->notifications()->attach($notification->id);
+            }
+        }
+
+        return view('admin');
+    }
 }
