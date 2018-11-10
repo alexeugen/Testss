@@ -11,10 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/contact', function () {
-    return view('contact',['fructe' => ['mere', 'pere', 'banane'], 'nume' => 'andrei']);
+Auth::routes();
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/', 'HomeController@index')->name('home');
+    
+    Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+    Route::get('/contact', function () {
+        return view('contact',['fructe' => ['mere', 'pere', 'banane'], 'nume' => 'andrei']);
+    });
 });

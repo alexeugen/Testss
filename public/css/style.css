@@ -1,0 +1,10 @@
+.my-navbar {
+    background-color: #ffcccc !important;
+    border-color:  #ffe6e6 !important;
+}
+
+.first-image{
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
