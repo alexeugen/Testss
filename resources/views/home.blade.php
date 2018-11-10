@@ -12,20 +12,25 @@
                 Ultimele Notificari
             </h2>
             @foreach ($notifications as $notification)
+                @if($notification->type == 1)
                 <div class="alert alert-danger" role="alert">
                     <h4>{{ $notification->title }}</h4>
                     <p>{{ $notification->content }}</p>
                 </div>
+                @endif
+                @if($notification->type == 2)
+                <div class="alert alert-warning" role="alert">
+                    <h4>{{ $notification->title }}</h4>
+                    <p>{{ $notification->content }}</p>
+                </div>
+                @endif
+                @if($notification->type == 3)
+                <div class="alert alert-info" role="alert">
+                    <h4>{{ $notification->title }}</h4>
+                    <p>{{ $notification->content }}</p>
+                </div>
+                @endif
             @endforeach
-            <div class="alert alert-danger" role="alert">
-                A simple danger alert—check it out!
-            </div>
-            <div class="alert alert-warning" role="alert">
-                A simple warning alert—check it out!
-            </div>
-            <div class="alert alert-info" role="alert">
-                A simple info alert—check it out!
-            </div>
         </div>
         <!--Notifications End-->
         <!--Articles Start-->

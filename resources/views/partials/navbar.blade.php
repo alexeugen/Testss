@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light my-navbar">
-    <a class="navbar-brand" href="#">Logo</a>
+    <a class="navbar-brand mr-auto" href="\">Logo</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
         aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -10,14 +10,16 @@
                 <a class="nav-link" href="#">Acasa<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link1</a>
+                <a class="nav-link" href="#">Doctori</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link2</a>
+                <a class="nav-link" href="#">Articole</a>
             </li>
         </ul>
-        <span class="navbar-text">
-            Log Out
-        </span>
+        <ul class="navbar-nav my-nav-link">
+            <li class="nav-item">
+                <a class="nav-link" href="/logout">Log out</a>
+            </li>
+         </ul>
     </div>
 </nav>

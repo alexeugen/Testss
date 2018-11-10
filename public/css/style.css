@@ -1,10 +1,45 @@
 .my-navbar {
-    background-color: #ffcccc !important;
+    color: white;
+    background-color: #17a2b8!important;
     border-color:  #ffe6e6 !important;
+}
+
+.my-navbar a {
+    color: white;
+}
+
+.nav-item a {
+    color: white !important;
+}
+
+.my-nav-link {
+    float: right;
 }
 
 .first-image{
     width: 100%;
     height: 500px;
     overflow: hidden;
+}
+
+
+#footer {
+    margin-top: 90px;
+    width: 100%;
+    background-color: #17a2b8!important;
+    background-color: blanchedalmond;
+    height: 200px;
+    color: white;
+}
+
+#footer a {
+    color: white;
+}
+
+#footer ul {
+    padding-top: 40px;
+}
+
+.admin-container {
+    margin-top: 70px !important;
 }
